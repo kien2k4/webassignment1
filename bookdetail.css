@@ -1,0 +1,372 @@
+/* RMIT University Vietnam
+   Course: COSC2430 Web Programming
+   Semester: 2023A
+   Assessment: Assignment 1
+   Author: Dang Trung Kien
+   ID: s3979510
+   Acknowledgement: I use books' images and descriptions of 2 websites bookshop.org and amazon.com. 
+                    And I also consult some coding ideas from social platforms like facebook, tiktok and codepen.*/
+
+*, *:before, *:after {
+    box-sizing: border-box;
+  }
+
+a {
+    color: #f7f2ef;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Kurale', serif;
+    margin: 0px;
+    background-color: #948c96;
+}
+
+header {
+    top: 0px;
+    height: 125px;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    background-color: #191826;
+    box-shadow: 1px 2px 6px #191826;
+}
+
+.logo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    margin-left: 70px;
+    width: 100px;
+    height: 100px;
+}
+
+.nav {
+    visibility: hidden;
+    opacity: 0;
+    margin: 0;
+    width: 100%;
+    background-color: #181725;
+    position: absolute;
+    margin-top: -20px;
+    list-style: none;
+    font-size: 24px;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.nav li a{
+    text-align: center;
+    color: #a0a0a0;
+    font-size: 20px;
+    display: block;
+    width: calc(100% - 10px);
+    border-bottom: 1.5px solid #a0a0a0;
+    transition: width 5s ease;
+}
+
+li a:hover {
+    color: whitesmoke;
+    letter-spacing: 2.5px;
+    transition: .5s ease-out;
+    border-bottom: 1.5px solid white;
+}
+
+.menu-btn {
+    color: #f7f2ef;
+    padding-right: 55px;
+    align-self: center;
+    background: none;
+    border: none;
+    font-size: 40px;
+    cursor: pointer;
+    position: relative;
+}
+
+#menu-checkbox {
+    display: none;
+}
+
+#menu-checkbox:checked ~ .nav {
+    opacity: 1;
+    visibility: visible;
+    transition: 0.5s ease;
+}
+
+.timeline {
+    font-size: 20px;
+    margin-top: 150px;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+}
+
+.timeline p a {
+    color: #1e1a0f;
+}
+
+.timeline a:hover {
+    letter-spacing: 1.5px;
+    transition: .5s;
+}
+
+.vessel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.book-name1 {
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.book-name2 {
+    display: none;
+}
+
+button {
+    background-color: #d9e3e9;
+    font-family: 'Kurale', serif;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #de2454;
+    position: relative;
+    overflow: hidden;
+    outline: 2px solid #de2454;
+    cursor: pointer;
+    transition: all 1000ms;
+    padding: 1em 2em;
+    border-radius: 10px;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    transform: scale(1.1);
+    color: whitesmoke;
+    outline: 2px solid #ce5978;
+    box-shadow: 4px 5px 17px -4px #990b31;
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    background-color: #de2454;
+    left: -50px;
+    top: 0;
+    width: 0;
+    height: 100%;
+    transform: skewX(45deg);
+    z-index: -1;
+    transition: width 1000ms;
+}
+
+button:hover::before {
+    width: 250%;
+}
+
+.detail {
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 80%;
+}
+
+.detail .title {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-buy {
+    align-items: center;
+    text-align: center;
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image img {
+    max-width: 280px;
+    min-width: 277px;
+    max-height: 418px;
+}
+
+.small-imgs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+
+.small-imgs img {
+    margin: 8px;
+    max-width: 80px;
+    max-height: 130px;
+}
+
+.price {
+    font-size: 20px;
+}
+
+hr {
+    border: 2px solid black;
+    width: 100%;
+    opacity: 50%;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #181725;
+    margin-top: 100px;
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 5%;
+    width: 70%;
+}
+
+.footer-nav a{
+    width: fit-content;
+}
+
+.footer-social {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 25px;
+    margin-top: 20px;
+    width: 70%;
+    font-size: 25px;
+    gap: 10%;
+}
+
+.footer-social a:hover {
+    transition: .3s ease-in-out;
+    transform: translate(-1px, -2px);
+}
+
+@media (max-width:991px) {
+    .logo img {
+        margin-top: 13px;
+    }
+}
+
+@media (min-width: 992px) {
+    .menu-btn {
+        display: none;
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        visibility: visible;
+        opacity: 1;
+        position: static;
+        gap: 40px;
+        margin-right: 40px;
+    }
+    
+    .nav li a{
+        border: none;
+        color: #a0a0a0;
+        transition: .3s ease;
+        font-size: 24px;
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    li a:hover {
+        color: aliceblue;
+        transition: .3s ease-out;
+        border-bottom: 2.5px solid whitesmoke;
+        letter-spacing: 2px;
+    }   
+
+    button {
+        font-size: 125%;
+    }
+
+    .book-name1 {
+        display: none;
+    }
+
+    .book-name2 {
+        display: flex;
+        justify-content: center;
+        font-size: 30px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .detail {
+        margin-top: -10px;
+    }
+
+    .image img{
+        min-height: 500px;
+        max-width: 323px;
+        max-height: 500px;
+        padding-right: 30px;
+    }
+
+    .price {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 125%;
+    }
+
+    .timeline {
+        font-size: 25px;
+    }
+
+    .small-imgs {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-right: 200px;
+        margin-top: 5px;
+    }
+
+    .small-imgs img{
+        max-width: 90px;
+        min-height: 150px;
+    }
+}

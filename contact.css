@@ -1,0 +1,302 @@
+/* RMIT University Vietnam
+   Course: COSC2430 Web Programming
+   Semester: 2023A
+   Assessment: Assignment 1
+   Author: Dang Trung Kien
+   ID: s3979510
+   Acknowledgement: I use books' images and descriptions of 2 websites bookshop.org and amazon.com. 
+                    And I also consult some coding ideas from social platforms like facebook, tiktok and codepen.*/
+                    
+a {
+    color: #f7f2ef;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Kurale', serif;
+    margin: 0px;
+    background-color: #948c96;
+}
+
+header {
+    position: fixed;
+    background-color: #191826;
+    box-shadow: 1px 2px 6px #191826;
+    top: 0px;
+    height: 125px;
+    width: 100%;
+    z-index: 2;
+}
+
+.logo-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-section img {
+    margin-top: 13px;
+    margin-left: 70px;
+    width: 100px;
+    height: 100px;
+}
+
+.nav {
+    visibility: hidden;
+    background-color: #181725;
+    position: absolute;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    margin: 0;
+    width: 100%;
+    margin-top: -20px;
+    font-size: 24px;
+    padding: 20px 40px;
+    gap: 25px;
+}
+
+.nav li a{
+    text-align: center;
+    color: #a0a0a0;
+    display: block;
+    border-bottom: 1.5px solid #a0a0a0;
+    transition: width .3s ease;
+    width: 80%;
+    font-size: 20px;
+}
+
+li a:hover {
+    transition: .5s ease-out;
+    border-bottom: 1.5px solid white;
+    color: whitesmoke;
+    letter-spacing: 2.5px;
+}
+
+.menu-btn {
+    cursor: pointer;
+    position: relative;
+    color: #f7f2ef;
+    align-self: center;
+    background: none;
+    border: none;
+    font-size: 40px;
+    padding-right: 55px;
+}
+
+#menu-checkbox {
+    display: none;
+}
+
+#menu-checkbox:checked ~ .nav {
+    opacity: 1;
+    visibility: visible;
+    transition: 0.5s ease;
+}
+
+main {
+    padding: 0 10%;
+    margin-top: 200px;
+    width: 66%;
+}
+
+.form-name {
+    font-size: 40px;
+    letter-spacing: 1px;
+}
+
+.container {
+    font-size: 18px;
+    padding: 5% 10%;
+    width: 100%;
+    border-radius: 15px;
+    color: black;
+}
+
+.format {
+    padding: 25px 0 0 30px;
+}
+
+input[type="text"], select, textarea {
+    border: 2.5px solid black;
+    display: block;
+    margin: 20px auto;
+    padding: 1.2%;
+    width: 100%;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+select {
+    display: inline-block;
+    width: auto;
+}
+
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+input[type="submit"], 
+input[type="reset"] {
+    font-size: 18px;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-family: 'Kurale', serif;
+    cursor: pointer;
+    border: none;
+    border: 2px solid #1e1a0f;
+    background-color: #938b93;
+    color: black;
+}
+
+input[type="submit"]:hover, 
+input[type="reset"]:hover {
+    background-color: #dba98e;
+    transition: .2s ease-out;
+}
+
+footer {
+    margin-top: 100px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #181725;
+}
+
+.footer-nav {
+    margin-top: 50px;
+    gap: 5%;
+    width: 70%;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-nav a{
+    width: fit-content;
+}
+
+.footer-social {
+    gap: 10%;
+    margin-bottom: 25px;
+    margin-top: 20px;
+    width: 70%;
+    font-size: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-social a:hover {
+    transition: .3s ease-in-out;
+    transform: translate(-1px, -2px);
+}
+
+@media (min-width:991px) {
+    .menu-btn {
+        display: none;
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        visibility: visible;
+        opacity: 1;
+        position: static;
+        gap: 40px;
+        margin: 40px;
+    }
+    .format {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .format label {
+        flex: 0 0 200px; 
+    }
+    
+    .input {
+        flex: 1;
+    }
+    
+    .nav li a{
+        font-size: 24px;
+        width: 100%;
+        color: #a0a0a0;
+        border: none;
+        transition: .3s ease;
+    }
+
+    li a:hover {
+        letter-spacing: 2px;
+        color: aliceblue;
+        transition: .3s ease-out;
+        border-bottom: 2.5px solid whitesmoke;
+    }
+}
+
+@media (max-width:768px) {
+    .format {
+        flex-direction: column;
+    }
+
+    .format label {
+        flex: none;
+        margin-bottom: 5px;
+    }
+
+    select {
+        width: 100%;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+        font-size: 16px;
+        display: block;
+        padding: 7px 17px;
+        margin-bottom: 10px;
+    }
+
+    input[type="submit"]:hover,
+    input[type="reset"]:hover {
+        transform: translateY(-5px);
+    }
+}
+
+@media (min-width: 500px) and (max-width: 991px) {
+    .nav li a {
+        min-width: 89%;
+    }
+
+    .format.button-row {
+        justify-content: flex-end;
+    }
+}
+
+@media (min-width: 991px) {
+    .logo-section img {
+        margin-top: 0px;
+    }
+
+    .format.button-row {
+        justify-content: flex-end;
+    }
+
+    .input {
+        margin-left: 50px;
+    }
+}

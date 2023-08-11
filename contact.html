@@ -1,0 +1,123 @@
+<!--RMIT University Vietnam
+    Course: COSC2430 Web Programming
+    Semester: 2023A
+    Assessment: Assignment 1
+    Author: Dang Trung Kien
+    ID: s3979510
+    Acknowledgement: I use books' images and descriptions of 2 websites bookshop.org and amazon.com. 
+                     And I also consult some coding ideas from social platforms like facebook, tiktok and codepen.-->
+                     
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <script src="https://kit.fontawesome.com/fe20a0215b.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="/images/logo.jpg">
+    <link rel="stylesheet" href="contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kurale&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="logo-section">
+            <a href="index.html"><img src="images/logo.jpg" alt="logo"></a>
+            <div class="menu-btn-container">
+                <label for="menu-checkbox" class="menu-btn"><i class="fa-solid fa-bars"></i></label>
+            </div>
+        </div>
+    
+        <input type="checkbox" id="menu-checkbox">
+        <ul class="nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="fiction.html">Fiction</a></li>
+            <li><a href="nonfiction.html">Nonfiction</a></li>
+            <li><a href="kidsbooks.html">Kids Books</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="form-name">Contact Us Form:</div>
+            <form action="#">
+                <div class="format">
+                    <label for="contact-goal">Contact Purpose:</label>
+                    <div class="input">
+                        <select name="contact-purpose" id="contact-purpose">
+                            <option value="sell-book">I want to sell books</option>
+                            <option value="buy-book">I want to buy books</option>
+                        </select> 
+                    </div>
+                </div>
+                <div class="format">
+                    <label for="user-name">Full name: </label>
+                    <div class="input">
+                        <input type="text" id="name">   
+                    </div>
+                </div>
+                <div class="format">
+                    <label for="user-email">Email address: </label>
+                    <div class="input">
+                        <input type="text" id="email">   
+                    </div>
+                </div>
+                <div class="format">
+                    <label for="phone">Phone number: </label>
+                    <div class="input">
+                        <input type="text" id="phone">   
+                    </div>
+                </div>
+                <div class="format">
+                    <label for="contact-prefer-choices">Contact preference: </label>
+                    <div class="input">
+                        <input type="checkbox" id="contact-preference" value="email" name="contact">
+                        <label for="contact-preference">By email</label>
+                        <br>
+                        <input type="checkbox" id="contact-preference" value="phone" name="contact">
+                        <label for="contact-preference">By phone</label>
+                    </div>
+                </div>
+                <div class="format">
+                    <label for="receive-new-choices">Receiving weekly notifications?</label>
+                    <div class="input">
+                        <input type="radio" id="option" value="yes" name="new" checked>
+                        <label for="news-noti">Yes</label>
+                        <br>
+                        <input type="radio" id="option" value="no" name="new">
+                        <label for="news-noti">No</label>
+                    </div> 
+                </div>
+                <div class="format">
+                    <label for="notes">Please provide any extra notes that you would like:</label>
+                    <div class="input">
+                        <textarea name="notes" id="notes" rows="5"></textarea>
+                    </div>
+                </div>
+                <div class="format button-row">
+                    <input type="submit">
+                    <input type="reset">
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-nav">
+            <a href="">About Us</a>
+            <a href="">Privacy Policy</a>
+            <a href="">Terms</a>
+            <a href="">Copyright</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="footer-social"> 
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-youtube"></i></a>
+            <a href=""><i class="fa-brands fa-twitter"></i></a>
+        </div>
+    </footer>
+    
+</body>
+</html>
